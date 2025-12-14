@@ -1,0 +1,12 @@
+train: /home/jovyan/lost+found/ice_sleep_detpj/data/YOLO_dataset/images/train
+val: /home/jovyan/lost+found/ice_sleep_detpj/data/YOLO_dataset/images/val
+
+nc: 6
+names: [
+  'Leye_Open',
+  'Leye_Closed',
+  'Reye_Open',
+  'Reye_Closed',
+  'Mouth_Open',
+  'Mouth_Closed'
+]
