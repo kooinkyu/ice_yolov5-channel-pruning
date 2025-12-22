@@ -256,7 +256,7 @@ def run(
         LOGGER.info(f"Results saved to {colorstr('bold', save_dir)}{s}")
     if update:
         strip_optimizer(weights[0])  # update model (to fix SourceChangeWarning)
-# ✅ 프루닝된 모델 반환
+# 프루닝된 모델 반환
     return model
 
 
@@ -312,14 +312,14 @@ if __name__ == "__main__":
     )
 
     # ==============================
-    # 💾 Pruned 모델 자동 저장 (yaml 포함)
+    # Pruned 모델 자동 저장 (yaml 포함)
     # ==============================
     import torch, os
     save_dir = "/home/jovyan/lost+found/ice_sleep_detpj/yolov5_v7/runs/prune"
     os.makedirs(save_dir, exist_ok=True)
     save_path = os.path.join(save_dir, "ice_eye_mouth20_pruned.pt")
 
-    # ✅ 핵심 수정: model.model을 저장해야 실제 YOLO 구조가 포함됨
+    # 핵심 수정: model.model을 저장해야 실제 YOLO 구조가 포함됨
     torch.save(
         {
             'model': pruned_model.model if hasattr(pruned_model, 'model') else pruned_model,
@@ -328,4 +328,4 @@ if __name__ == "__main__":
         save_path
     )
 
-    print(f"✅ Pruned model (weights + yaml) saved at: {save_path}")
+    print(f"Pruned model (weights + yaml) saved at: {save_path}")
